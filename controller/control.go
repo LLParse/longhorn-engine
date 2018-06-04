@@ -470,6 +470,10 @@ func (c *Controller) Frontend() string {
 	return c.frontend.FrontendName()
 }
 
+func (c *Controller) Target() string {
+	return c.frontend.Target()
+}
+
 func (c *Controller) UpdatePort(newPort int) error {
 	oldServer := c.RestServer
 	if oldServer == nil {

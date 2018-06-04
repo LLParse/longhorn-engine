@@ -83,6 +83,10 @@ func (t *Socket) Endpoint() string {
 	return ""
 }
 
+func (t *Socket) Target() string {
+	return ""
+}
+
 func (t *Socket) GetSocketPath() string {
 	if t.Volume == "" {
 		panic("Invalid volume name")

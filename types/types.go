@@ -73,6 +73,7 @@ type Frontend interface {
 	Shutdown() error
 	State() State
 	Endpoint() string
+	Target() string
 }
 
 type DataProcessor interface {

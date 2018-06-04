@@ -21,6 +21,7 @@ type Volume struct {
 	ReplicaCount int    `json:"replicaCount"`
 	Endpoint     string `json:"endpoint"`
 	Frontend     string `json:"frontend"`
+	Target       string `json:"target"`
 }
 
 type VolumeCollection struct {
@@ -73,7 +74,7 @@ type PortInput struct {
 	Port int `json:"port"`
 }
 
-func NewVolume(context *api.ApiContext, name, endpoint, frontend string, replicas int) *Volume {
+func NewVolume(context *api.ApiContext, name, endpoint, frontend, target string, replicas int) *Volume {
 	v := &Volume{
 		Resource: client.Resource{
 			Id:      EncodeID(name),
@@ -84,6 +85,7 @@ func NewVolume(context *api.ApiContext, name, endpoint, frontend string, replica
 		ReplicaCount: replicas,
 		Endpoint:     endpoint,
 		Frontend:     frontend,
+		Target:       target,
 	}
 
 	if replicas == 0 {

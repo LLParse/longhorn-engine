@@ -83,6 +83,10 @@ func (t *Tcmu) Endpoint() string {
 	return ""
 }
 
+func (t *Tcmu) Target() string {
+	return ""
+}
+
 func PreEnableTcmu(volume string, size, sectorSize int64) error {
 	err := writeLines(path.Join(configDir, volume, "control"), []string{
 		fmt.Sprintf("dev_size=%d", size),

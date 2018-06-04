@@ -89,6 +89,13 @@ func (t *Tgt) Endpoint() string {
 	return ""
 }
 
+func (t *Tgt) Target() string {
+	if t.scsiDevice != nil {
+		return t.scsiDevice.Target
+	}
+	return ""
+}
+
 func (t *Tgt) getDev() string {
 	return filepath.Join(DevPath, t.s.Volume)
 }

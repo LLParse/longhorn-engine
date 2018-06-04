@@ -85,3 +85,7 @@ func (d *Device) Endpoint() string {
 	}
 	return ""
 }
+
+func (d *Device) Target() string {
+	return ""
+}

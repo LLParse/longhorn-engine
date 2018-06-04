@@ -7,7 +7,7 @@ Longhorn Engine implements a lightweight block device storage controller capable
 1. The replicas function like a networked disk, supporting read/write operations over a network protocol.
 1. The frontend (either TCMU or Open-iSCSI/tgt are supported at this moment) is a kernel driver that translates read/write operations on the Longhorn block device (mapped at `/dev/longhorn/vol-name`) to user-level network requests on the controller.
 1. Each Longhorn block device is backed by its own dedicated controller.
-1. The controller sychronously replicates write operations to all replicas.
+1. The controller synchronously replicates write operations to all replicas.
 1. The controller detects faulty replicas and rebuilds replicas.
 1. The controller coordinates snapshot and backup operations.
 1. Controllers and replicas are packaged as Docker containers.
@@ -102,7 +102,7 @@ tcp://172.18.0.3:9502 RW   [volume-head-000.img]
 ```
 
 ## License
-Copyright (c) 2014-2017 [Rancher Labs, Inc.](http://rancher.com)
+Copyright (c) 2014-2018 [Rancher Labs, Inc.](http://rancher.com)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
